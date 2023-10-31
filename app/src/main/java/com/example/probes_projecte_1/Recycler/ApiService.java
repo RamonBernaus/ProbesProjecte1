@@ -1,6 +1,4 @@
-package com.example.probes_projecte_1;
-
-import com.example.probes_projecte_1.Recycler.YourDataModel;
+package com.example.probes_projecte_1.Recycler;
 
 //import BooleanResponse;
 
@@ -8,7 +6,6 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Query;
 
 public interface ApiService {
     /*

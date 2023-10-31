@@ -1,4 +1,4 @@
-package com.example.probes_projecte_1;
+package com.example.probes_projecte_1.Login;
 
 public class BooleanResponse {
     private boolean Boolean;
