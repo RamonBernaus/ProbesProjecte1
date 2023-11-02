@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.probes_projecte_1.Recycler.CreateRecyclerView;
+import com.example.probes_projecte_1.Sockets.SocketsConnexion;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private SocketManager socketManager;
     private TextView chatTextView;
     private EditText messageEditText, Username, UserPassword;
-    private Button sendButton, LoginButton, RecyclerButton;
+    private Button sendButton, LoginButton, RecyclerButton, SocketButton;
     private final Context context = MainActivity.this;
 
     @Override
@@ -28,10 +29,16 @@ public class MainActivity extends AppCompatActivity {
         RecyclerButton = findViewById(R.id.RecyclerButton);
 
         RecyclerButton.setOnClickListener(v -> {
-            Intent intent = new Intent(context, CreateRecyclerView.class);
-            context.startActivity(intent);
+            Intent intentRecycler = new Intent(context, CreateRecyclerView.class);
+            context.startActivity(intentRecycler);
         });
 
+        SocketButton = findViewById(R.id.SocketButton);
+
+        SocketButton.setOnClickListener(v->{
+            Intent intentSocket = new Intent(context, SocketsConnexion.class);
+            context.startActivity(intentSocket);
+        });
 
         /*
         // Socket

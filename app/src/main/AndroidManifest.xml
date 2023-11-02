@@ -25,7 +25,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Recycler.CreateRecyclerView">
-            <!-- Opcional: Configuraciones adicionales de la actividad aquí -->
+        </activity>
+        <activity android:name=".Sockets.SocketsConnexion">
         </activity>
     </application>
 

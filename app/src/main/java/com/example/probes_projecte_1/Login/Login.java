@@ -2,12 +2,10 @@ package com.example.probes_projecte_1.Login;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.widget.EditText;
 
-import androidx.annotation.NonNull;
-
-import com.example.probes_projecte_1.ApiService;
 import com.example.probes_projecte_1.SocketsChat;
 
 import retrofit2.Call;
@@ -15,7 +13,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Login {
-    /*
+
     public static void CallLogin(ApiService service, EditText Username, EditText UserPassword, String TAG, Context context){
         String UsernameText = Username.getText().toString();
         String UserPasswordText = UserPassword.getText().toString();
@@ -43,5 +41,5 @@ public class Login {
                 Log.e(TAG, "Error en la solicitud: " + t.getMessage());
             }
         });
-    }*/
+    }
 }

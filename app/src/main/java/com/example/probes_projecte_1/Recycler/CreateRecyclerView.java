@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.probes_projecte_1.ApiService;
 import com.example.probes_projecte_1.R;
 
 import java.util.List;
@@ -53,7 +52,7 @@ public class CreateRecyclerView extends AppCompatActivity {
             public void onResponse(@NonNull Call<List<YourDataModel>> call, @NonNull Response<List<YourDataModel>> response) {
                 if (response.isSuccessful()) {
                     List<YourDataModel> data = response.body();
-                    adapter = new MyAdapter(data, CreateRecyclerView.this);
+                    adapter = new MyAdapter(data);
                     recyclerView.setAdapter(adapter);
                 } else {
                     // Manejar la respuesta no exitosa aquí

@@ -15,11 +15,10 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private final List<YourDataModel> data;
-    private Context context; // Agregado el contexto
 
-    public MyAdapter(List<YourDataModel> data, Context context) {
+
+    public MyAdapter(List<YourDataModel> data) {
         this.data = data;
-        this.context = context;
     }
 
     @NonNull

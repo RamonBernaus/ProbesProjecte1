@@ -1,7 +1,6 @@
 package com.example.probes_projecte_1.Recycler;
 
 public class YourDataModel {
-
     private int id;
     private String imgURL;
     private String nom;
