@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,8 +21,7 @@ public class SocketsConnexion extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sockets_probes);
-        TextView SocketTextView = findViewById(R.id.SocketTextView);
-        EditText StatusComanda = findViewById(R.id.StatusComanda);
+
         Button EnviarComanda = findViewById(R.id.EnviarComanda);
 
         EnviarComanda.setOnClickListener(v->{
@@ -31,7 +31,7 @@ public class SocketsConnexion extends AppCompatActivity {
                 socket.connect();
 
                 // Aquí puedes enviar un estado específico al servidor
-                String estado = String.valueOf(StatusComanda.getText());
+                String estado = "Enviada";
                 socket.emit("comandaStatus", estado);
 
                 // Escucha el evento "comandaResponse"
@@ -39,15 +39,24 @@ public class SocketsConnexion extends AppCompatActivity {
                     String message = (String) args[0];
                     // Aquí puedes manejar la respuesta de la comanda
                     runOnUiThread(() -> {
-                        // Actualiza la interfaz de usuario con el mensaje recibido
-                        // por ejemplo, mostrando un mensaje en un TextView
-                        SocketTextView.setText(message);
+                        // Muestra un Toast con el mensaje recibido
+                        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+                    });
+                });
+
+                socket.on("comandaAcceptada", args -> {
+                    String message = (String) args[0];
+                    // Aquí puedes manejar la respuesta de la comanda
+                    runOnUiThread(() -> {
+                        // Muestra un Toast con el mensaje recibido
+                        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
                     });
                 });
             } catch (URISyntaxException e) {
                 e.printStackTrace();
             }
         });
+
     }
 
 }
